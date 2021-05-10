@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Online Food Delivery Form </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="custom.css" rel="stylesheet" type="text/css">
+
+    <script>
+        function finalCost(){
+            var foodItem = document.getElementById("food_item").value;
+            var specialItemm = document.getElementById("special_item").value;
+            var foodQuatity = document.getElementById("food_quantity").value;
+            var deliveryType = document.getElementById("delivery_type").value;
+            var deliveryArea = document.getElementById("delivery_area").value;
+
+            var all_food = (parseInt(foodItem)*7) + (parseInt(specialItemm)*3) + ((foodQuatity)*2) + (parseInt(deliveryType)*4) + (parseInt(deliveryArea)*3)
+            document.getElementById("result").innerHTML = all_food;
+        }
+        function ok_result(){
+            document.getElementById("okResult").style.display="block";
+            document.getElementById("okResult").style.backgroundColor="#DCE775";
+            document.getElementById("input_box").style.display="none";
+        }
+    </script>
+
+</head>
+
+<style>
+   body {font-family: Arial, Helvetica, sans-serif; background: #0c0b09;color:#0c0b09 ;}
+* {box-sizing: border-box}
+.box {
+    background-color: #cda45e;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    padding: 40px 60px;
+}
+#details_info {
+    background-color: #f7f7f7;
+    color: #463c39;
+    font-size: 17px;
+    padding: 30px 30px;
+    width: 40%;
+    border: 1px solid #cccccc;
+    font-family: sans-serif;
+    line-height: 1.8;
+    margin-left: 90px;
+}
+.box3 {
+    margin-top: 80px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 60px;
+    padding: 40px 50px;
+    background-color: gainsboro;
+}
+.box11 {
+    margin-top: 80px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 60px;
+    padding: 40px 50px;
+    background-color: gainsboro;
+    line-height: 2.5;
+}
+.web_design_box {
+    margin-top: 30px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 60px;
+    padding: 40px 50px;
+    background-color: #d9edf7;
+    box-shadow: 3px 5px 10px #318f86;
+}
+
+.online_food_delivery_box {
+    margin-top: 50px;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 60px;
+    padding: 20px 40px;
+    background-color:  #cda45e;
+    box-shadow: 3px 5px 10px #714c4a;
+}
+.result_box {
+    margin-top: 15%;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 60px;
+    padding: 20px 40px;
+    background-color: #d4c0b9;
+    box-shadow: 3px 5px 10px #8BC34A;
+}
+.result_box_text {
+    color: #232222;
+    font-size: 20px;
+    text-align: center;
+    padding-top:10px;
+}
+.result_box_text span {
+    color: #614136;
+    font-size: 26px;
+    text-align: center;
+}
+</style>
+
+
+
+
+
+
+<body>
+      <div class="online_food_delivery_box animated bounceInDown" id="input_box">
+          <h3> Online Food Delivery Form </h3><br>
+          <form>
+              <div class="form-group">
+                  <select class="form-control" id="food_item" onchange="finalCost()">
+                      <option value="0"> Select Food Item ... </option>
+                      <option value="1"> Spring Roll </option>
+                      <option value="2"> Fried Prawn </option>
+                      <option value="3"> Thai Fried Chicken Wings  </option>
+                      <option value="4"> Cutlet Chicken </option>
+                      <option value="4"> Paturi(special)</option>
+                      <option value="4"> Indian Kadhi(special) </option>
+                      <option value="5"> Cutlet Beef  </option>
+                      <option value="4"> Murgh Makhani(special) </option>
+                      <option value="6"> Kashmiri Kabab  </option>
+                      <option value="7"> Thai Beef With Ginger </option>
+                      <option value="1"> Kadhai Paneer</option>
+                      <option value="2"> Paneer Tikka Masala </option>
+                      <option value="3"> Veg Kofta </option>
+                      <option value="4"> Aloo Matar Special  </option>
+                      <option value="5"> Shahi kofta </option>
+                      <option value="6"> Veg Kolhapuri</option>
+                      <option value="7"> Veg Chilli Milli </option>
+                      
+                  </select>
+              </div>
+              
+              <div class="form-group">
+                  <input type="number" class="form-control" id="food_quantity" placeholder="Quantity" onkeyup="finalCost()" >
+              </div>
+              <div class="form-group">
+                  <select class="form-control" id="delivery_type" onchange="finalCost()">
+                      <option value="0"> Delivery Type - </option>
+                      <option value="0"> Normal </option>
+                      <option value="2"> Emergency </option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <select class="form-control" id="delivery_area" onchange="finalCost()">
+                      <option value="0"> Select Delivery Area ... </option>
+                      <option value="1">Thane</option>
+                      <option value="2">Mulund</option>
+                      <option value="3">Ghatkopar </option>
+                      <option value="4">Airoli </option>
+                      <option value="5">Nerul</option>
+                      <option value="1">Kalyan</option>
+                      <option value="2">Dombivali</option>
+                      <option value="3">Kurla</option>
+                      <option value="4">Bhandup </option>
+                      <option value="5">Dadar</option>
+                      <option value="5">Parel</option>
+                      <option value="1">Matunga</option>
+                      <option value="2">Belapur</option>
+                      <option value="3">Panvel</option>
+                      <option value="4">Chembur </option>
+                      <option value="5">Seawood</option>  
+                  </select>
+                    <br>
+                  <div class="form-group">
+                      <fieldset>
+                        <label for="address">Address:</label>
+                        <textarea rows="3" cols="70" name="address" id="address"></textarea>
+                      </fieldset>
+                  </div>
+                  <div class="form-group">
+                    <fieldset>
+                        <h5>Do You Want Special Item</h5>
+                        <lable> Yes <input type="checkbox" name="Yes" value="Yes"></lable>
+                        <lable> No <input type="checkbox" name="No" value="No"></lable>
+                    </fieldset>
+                  </div>
+              </div><br>
+              <div class="form-group">
+                  <label>Total Cost (rs): </label>
+                  <span id="result" style="background-color: #8c7269;color: #fff;padding: 6px 70px;font-weight: 600;font-size: 18px; margin-left: 10px;border-radius: 5px;">0</span>
+                  <input type="button" value="SUBMIT" class="btn btn-primary" style="float: right" id="ok" onclick="ok_result()">
+              </div>
+          </form>
+      </div>
+
+      <div class="result_box animated zoomIn" style="display: none;" id="okResult">
+          <h3 class="result_box_text" id="ok_text"> Your order is successfully submitted. Please keep patience, we will come to you soon.<br><br><span> --  Thank You  -- </span></h3><br>
+      </div>
+
+</body>
+</html>
